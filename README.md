@@ -4,10 +4,12 @@ Dungeons and Dragons 3.5 NPC generator
 ## What does this do?
 This tool is Dungeons & Dragons 3.5 DM's best friend. Need to create a random NPC party that matches the player levels? A random merchant, aristocrat or a cleric with proper feats, skills and stats? This little script will do it automatically from ground up following the DnD 3.5 core rules rather rigorously. Thus no more sweat rolling a character that your players will ignore or slay anyway.
 
-The program will generate a nice HTML-character sheet with all necessary information, including feats, skills, BAB for different weapon types, Saves, AC, HP, Spell resistance, damage reduction, appearance, spoken languages, ability scores etc.
+The program will generate a nice printable A4 size HTML-character sheet with all necessary information, including feats, skills, BAB for different weapon types, Saves, AC, HP, Spell resistance, damage reduction, appearance, spoken languages, ability scores etc. Everything is generated consistently level-up by level-up with proper feat selection, ability score increases, racial and class feats, and all the stuff is interrelated as it should be. No shallow "generate a random value for this attribute" -stuff.
+
+The system is expandable. All DnD rules are stored in the dnd35_defs.py. Thus adding new classes or races is quite easy.
 
 ## Missing features
-At the moment the script does not memorize spells.
+At the moment the script does not memorize spells. Will maybe do it later and convert the code into Python 3.
 
 ## Requirements
 At the moment this works on Python 2.7 (or 2.x). 
