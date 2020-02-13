@@ -1,7 +1,11 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
-""" A. Sahala 2014 """
+""" A. Sahala 2014
+
+Dungeons & Dragons 3.5 character creation rules
+
+"""
 
 import re
 import random
@@ -120,9 +124,9 @@ class Character(object):
                                             'vs. creatures': 0,
                                             'vs. giant types': 0}}
 
-        self.armor_profiencies = list()
-        self.weapon_profiencies = list()
-        self.has_shield_profiency  = False
+        self.armor_proficiencies = list()
+        self.weapon_proficiencies = list()
+        self.has_shield_proficiency  = False
         self.sneak_attack = 0
 
         self.ac_unarmored_bonus = 0
@@ -1890,10 +1894,10 @@ def add_feats(npc, act_cls, act_cls_lvl, act_cls_lvl_max, comb_level):
         if not check_reqs(name, args, index):
             return False
 
-        if len(npc.weapon_profiencies) == 0:
+        if len(npc.weapon_proficiencies) == 0:
             return False
         else:
-            weapon_type = random.choice(npc.weapon_profiencies)
+            weapon_type = random.choice(npc.weapon_proficiencies)
 
         npc.feats[name + ' ('+weapon_type+')'] = args['descr']
         return True
@@ -1924,12 +1928,12 @@ def add_feats(npc, act_cls, act_cls_lvl, act_cls_lvl_max, comb_level):
         return True
 
     def armor_light(name):
-        npc.armor_profiencies.append('light')
+        npc.armor_proficiencies.append('light')
         npc.feats[name] = ""
         return True
 
     def armor_medium(name):
-        npc.armor_profiencies.append('medium')
+        npc.armor_proficiencies.append('medium')
         npc.feats[name] = ""
         return True
 
@@ -1941,12 +1945,12 @@ def add_feats(npc, act_cls, act_cls_lvl, act_cls_lvl_max, comb_level):
         if npc.ability_mods['dex'] > 1:
             return False
         else:
-            npc.armor_profiencies.append('heavy')
+            npc.armor_proficiencies.append('heavy')
             npc.feats[name] = ""
             return True
 
-    def shield_profiency(name):
-        npc.has_shield_profiency = True
+    def shield_procifiency(name):
+        npc.has_shield_proficiency = True
         npc.feats[name] = "No armor check penalty on attack rolls"
         return True
 
@@ -1961,8 +1965,8 @@ def add_feats(npc, act_cls, act_cls_lvl, act_cls_lvl_max, comb_level):
         npc.feats[name] = "Run speed increased"
         return True
 
-    def wpn_profiency(name, args, index):
-        npc.weapon_profiencies.append(args)
+    def wpn_proficiency(name, args, index):
+        npc.weapon_proficiencies.append(args)
         npc.feats[name] = 'No -4 penalty with %s weapons' % args
         return True
 
@@ -1985,9 +1989,9 @@ def add_feats(npc, act_cls, act_cls_lvl, act_cls_lvl_max, comb_level):
         'Agile': [skill_feat, {'Balance': 2, 'Escape Artist': 2}],
         'Alertness': [skill_feat, {'Listen': 2, 'Spot': 2}],
         'Animal Affinity': [skill_feat, {'Ride': 2, 'Handle Animal': 2}],
-        'Armor Profiency (light)': armor_light,
-        'Armor Profiency (medium)': armor_medium,
-        'Armor Profiency (heavy)': armor_heavy,
+        'Armor Proficiency (light)': armor_light,
+        'Armor Proficiency (medium)': armor_medium,
+        'Armor Proficiency (heavy)': armor_heavy,
         'Athletic': [skill_feat, {'Climb': 2, 'Swim': 2}],
         'Blind-fight': 'When fighting concealed creatures, reroll misses '\
                         'once. Half penalties when blinded',
@@ -2001,10 +2005,10 @@ def add_feats(npc, act_cls, act_cls_lvl, act_cls_lvl_max, comb_level):
         'Lightning Reflexes': [save_feat, {'ref': 2}],
         'Point Blank Shot': '+1 bonus on ranged attack and damage within 30 ft.',
         'Run': run,
-        'Shield Profiency': shield_profiency,
-        'Simple Weapon Profiency': [wpn_profiency, 'simple'],
-        'Martial Weapon Profiency': [wpn_profiency, 'martial'],
-        'Exotic Weapon Profiency': [wpn_profiency, 'exotic'],
+        'Shield Proficiency': shield_proficiency,
+        'Simple Weapon proficiency': [wpn_proficiency, 'simple'],
+        'Martial Weapon proficiency': [wpn_proficiency, 'martial'],
+        'Exotic Weapon proficiency': [wpn_proficiency, 'exotic'],
         'Toughness': toughness
         }
 
@@ -2039,7 +2043,7 @@ def add_feats(npc, act_cls, act_cls_lvl, act_cls_lvl_max, comb_level):
             'reqs': {'feats': 'Cleave', 'bab': 4}}],
         'Improved Shield Bash': [pre_req_feat,
             {'descr': 'Retain shield bonus to AC when bashing',
-            'reqs': {'feats': 'Shield Profiency'}}],
+            'reqs': {'feats': 'Shield proficiency'}}],
         'Two Weapon Fighting': [pre_req_feat,
             {'descr': 'Reduce two-weapon fighting penalties by 2',
             'reqs': {'dex': 15}}],
