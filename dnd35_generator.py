@@ -14,7 +14,7 @@ import html_template as html_sheet
 #    - Fix level adjustments (now roll chr lvl 0)
 #    - Split code into modules
 #
-# Python 2.7 -- A. Sahala
+# Python 2.7 -- A. Sahala 2014
 # #####################################################################
 
 NPC = dnd.Character()
