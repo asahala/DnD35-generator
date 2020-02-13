@@ -18,7 +18,7 @@ At the moment this works on Python 2.7 (or 2.x).
 Run dnd35_generator.py and follow the given instruction in the console. You can either give specific base info for the character or just pick anything randomly.
 
 #### 1. Class type
-(1) Standard player class or (2) NPC classe (e.g. aristocrat, acolyte etc.)
+(1) Standard player class from PHB or (2) NPC classses (aristocrat, adept, expert, commoner)
 
 #### 2. Customization
 (1) Customize your character, (2) just generate it completely randomly. If you go with option (1), you'll be asked questions below:
