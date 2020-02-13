@@ -6,6 +6,9 @@ This tool is Dungeons & Dragons 3.5 DM's best friend. Need to create a random NP
 
 The program will generate a nice HTML-character sheet with all necessary information, including feats, skills, BAB for different weapon types, Saves, AC, HP, Spell resistance, damage reduction, appearance, spoken languages, ability scores etc.
 
+## Missing features
+At the moment the script does not memorize spells.
+
 ## Requirements
 At the moment this works on Python 2.7 (or 2.x). 
 
