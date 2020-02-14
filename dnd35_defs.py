@@ -1949,7 +1949,7 @@ def add_feats(npc, act_cls, act_cls_lvl, act_cls_lvl_max, comb_level):
             npc.feats[name] = ""
             return True
 
-    def shield_procifiency(name):
+    def shield_proficiency(name):
         npc.has_shield_proficiency = True
         npc.feats[name] = "No armor check penalty on attack rolls"
         return True
